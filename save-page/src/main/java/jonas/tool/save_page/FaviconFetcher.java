@@ -34,21 +34,18 @@
  Written by Jonas Czech (JonasCz, stackoverflow.com/users/4428462/JonasCz and github.com/JonasCz). (4428462jonascz/eafc4d1afq)
  **/
 
-package jonas.tool.saveForOffline;
+package jonas.tool.save_page;
 
 import org.jsoup.nodes.Document;
 
-import java.io.File;
 import com.squareup.okhttp.*;
-import org.jsoup.select.*;
+
 import java.util.*;
 import org.jsoup.nodes.*;
-import java.net.*;
+
 import java.io.*;
-import java.util.regex.*;
+
 import android.graphics.*;
-import org.jsoup.*;
-import android.os.*;
 
 public class FaviconFetcher {
 	private static FaviconFetcher INSTANCE = new FaviconFetcher();

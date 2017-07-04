@@ -49,6 +49,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import jonas.tool.save_page.PageSaver;
+
 public class SaveService extends Service {
 
 	private final String TAG = "SaveService";
@@ -165,7 +167,7 @@ public class SaveService extends Service {
 		}
 	}
 
-	private class PageSaveEventCallback implements EventCallback {
+	private class PageSaveEventCallback implements PageSaver.EventCallback {
 
 		@Override
 		public void onFatalError(final Throwable e, String pageUrl) {

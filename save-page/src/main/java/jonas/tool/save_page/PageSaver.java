@@ -35,7 +35,7 @@
  with lots of improvements. (4428462jonascz/eafc4d1afq)
  **/
 
-package jonas.tool.saveForOffline;
+package jonas.tool.save_page;
 
 import com.squareup.okhttp.Cache;
 import com.squareup.okhttp.OkHttpClient;
@@ -614,8 +614,8 @@ public class PageSaver {
 			}
 		}
 	}
-	
-	class Options {
+
+    public class Options {
         private boolean makeLinksAbsolute = true;
 
         private boolean saveImages = true;
@@ -691,21 +691,21 @@ public class PageSaver {
             this.saveVideo = saveVideo;
         }
     }
-}
 
-interface EventCallback {
-    public void onProgressChanged(int progress, int maxProgress, boolean indeterminate);
+    public static interface EventCallback {
+        public void onProgressChanged(int progress, int maxProgress, boolean indeterminate);
 
-    public void onProgressMessage(String fileName);
-	
-	public void onPageTitleAvailable (String pageTitle);
+        public void onProgressMessage(String fileName);
 
-    public void onLogMessage (String message);
+        public void onPageTitleAvailable(String pageTitle);
 
-    public void onError(Throwable error);
-	
-	public void onError(String errorMessage);
-	
-	public void onFatalError (Throwable error, String pageUrl);
+        public void onLogMessage(String message);
+
+        public void onError(Throwable error);
+
+        public void onError(String errorMessage);
+
+        public void onFatalError(Throwable error, String pageUrl);
+    }
 }
 
